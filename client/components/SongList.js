@@ -7,13 +7,11 @@ const  SongList = (props) => {
      
       return (
       <ul>
-            { !props.data.loading && props.data.songs.map(song => {
-                return  ( <li key={song.id}>{song.id}{song.title}</li> )
-            })}
+       { !props.data.loading && props.data.songs.map(song => {
+            return (<li key={song.id}>{song.id}{song.title}</li> )
+       })}
       </ul>)
-
 }
-
 const query = gql`
 {
       songs{
@@ -22,5 +20,4 @@ const query = gql`
       }
 }
 `;
-
 export default graphql(query) (SongList);
